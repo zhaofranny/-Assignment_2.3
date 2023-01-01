@@ -1,0 +1,7 @@
+user = Wdtest.query.first()
+user.name = name
+try:
+    application.db.session.commit()
+except:
+    # 事務回滾
+    application.db.session.rollback()
